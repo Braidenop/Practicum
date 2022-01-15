@@ -8,6 +8,7 @@ app_name = 'hospU'
 urlpatterns = [
     path('', views.home, name='home'),
     path('login', views.LoginView.as_view(), name='login'),
+    path('logout', views.LogoutView.as_view(), name='logout'),
     path('register', views.register, name='register'),
 
 ]

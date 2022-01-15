@@ -8,11 +8,13 @@ from django.contrib.auth import views as auth_views
 
 from .forms import RegistrationForm
 
+
 def home(request):
     return render(request, 'homeU/base.html')
 
+
 def register(request):
-    title = "Crea una cuenta"
+    title = "Registro"
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
@@ -30,3 +32,5 @@ class LoginView(auth_views.LoginView):
     template_name = 'homeU/login.html'
 
 
+class LogoutView(auth_views.LogoutView):
+    next_page = '/'
